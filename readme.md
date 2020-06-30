@@ -1,5 +1,5 @@
 # ELK Cluster
-ELK Clister is a sample project in which a 2 PC cluster architecture is raised to interact with metricbeat, filebeat, logstash, elasticsearch and kibana. 
+ELK Cluster is a sample project in which a 2 PC cluster architecture is raised to interact with metricbeat, filebeat, logstash, elasticsearch and kibana. 
 
 In order to have a succssesful implementation, please address the following instructions
 
