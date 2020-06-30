@@ -1,0 +1,15 @@
+version: '3.0'
+
+networks:
+  elasticnet:
+    driver: bridge
+
+services:
+  metricbeat:
+    image: docker.elastic.co/beats/metricbeat:7.8.0
+    volumes:
+      - ./metricbeat.yml:/usr/share/metricbeat/metricbeat.yml
+    command: metricbeat -e -strict.perms=false
+    networks:
+      - elasticnet
+    restart: on-failure

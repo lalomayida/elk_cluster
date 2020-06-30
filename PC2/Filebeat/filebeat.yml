@@ -1,0 +1,10 @@
+filebeat.inputs:
+    - type: log
+      paths: 
+        - '/var/log/*.log'
+    
+output.logstash:
+    hosts: ["192.168.0.16:9704"]
+
+logging.json: true
+logging.metrics.enabled: false

@@ -1,0 +1,26 @@
+metricbeat.modules:
+- module: system
+  metricsets: ["cpu", "load", "filesystem", "fsstat", "memory", "network", "process", "core", "diskio", "socket"]
+  period: 60s
+  enabled: true
+  processes: ['.*']
+
+  cpu.metrics:  ["percentages"]
+  core.metrics: ["percentages"]
+
+setup.template.settings:
+  index.number_of_shards: 1
+  index.codec: best_compression
+  #_source.enabled: false
+
+setup.kibana:
+
+output.logstash:
+  # The Logstash hosts
+  hosts: ["192.168.0.15:9704"]
+
+processors:
+  - add_host_metadata: ~
+  - add_cloud_metadata: ~
+  - add_docker_metadata: ~
+  - add_kubernetes_metadata: ~
